@@ -1,0 +1,19 @@
+class  properties;
+  int num;
+  string name;
+  real balance;
+  function  new(int num,string name,real balance);
+    this.num=num;
+    this.name=name;
+    this.balance=balance;
+  endfunction
+  function void print();
+   $display("num=%0d,name=%0s,balance=%0f",num,name,balance);
+  endfunction
+endclass
+module testbench;
+  initial begin
+    properties pro =new(140,"NIRMAL",5959.40);
+    pro.print();
+  end
+endmodule

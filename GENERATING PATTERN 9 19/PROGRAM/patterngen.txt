@@ -1,0 +1,23 @@
+class patterngen;
+  rand int pattern[8];
+  constraint c1{
+    pattern[0]==9;
+    pattern[1]==19;
+    pattern[2]==29;
+    pattern[3]==39;
+    pattern[4]==49;
+    pattern[5]==59;
+    pattern[6]==69;
+    pattern[7]==79;
+   }
+endclass
+module test;
+  int pattern[8];
+  initial begin 
+    patterngen pg;
+    pg = new();
+    pg.randomize();
+    pattern=pg.pattern;
+    $display("generated pattern=%0p",pattern);
+     end 
+endmodule

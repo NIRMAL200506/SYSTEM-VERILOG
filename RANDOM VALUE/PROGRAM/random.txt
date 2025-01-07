@@ -1,0 +1,18 @@
+class random;
+  randc bit[3:0]a;
+  constraint cc{a<100;}
+  function void print();
+    $display("random numbers= %0p",a);
+  endfunction 
+endclass
+module test;
+  initial begin 
+    random ra;
+    ra=new();
+    if(ra.randomize()) begin 
+      ra.print();
+    end else begin
+      $display("randomization failed");
+    end
+  end
+endmodule

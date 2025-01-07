@@ -1,0 +1,22 @@
+class divisible_numberby5;
+ randc int num;
+  constraint c1{
+    num>=0;
+    num<=50;
+    num%5==0;
+  }
+endclass
+module tb;
+  initial
+    begin
+  divisible_numberby5 divi=new();
+      for (int i = 0; i < 10; i++) begin
+      if(divi.randomize())begin
+      $display("divisible num %d",divi.num);
+      end
+      else begin
+        $display("no divisible value",divi.num);
+      end
+      end
+    end
+endmodule
